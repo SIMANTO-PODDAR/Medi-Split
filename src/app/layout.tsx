@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/sections/Header/Header";
 import Footer from "@/sections/Footer/Footer";
+import GoogleTranslate from "@/components/GoogleTranslate/GoogleTranslate";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <GoogleTranslate />
         <Header />
 
         {children}
