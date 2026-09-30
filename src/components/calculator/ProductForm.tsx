@@ -90,12 +90,12 @@ export default function ProductForm({
 
     const priceNum = parseFloat(unitPrice);
     if (!unitPrice.trim() || isNaN(priceNum) || priceNum < 0) {
-      newErrors.unitPrice = "Enter a valid price (≥ 0)";
+      newErrors.unitPrice = "Enter a valid price";
     }
 
     const qtyNum = parseFloat(quantity);
     if (!quantity.trim() || isNaN(qtyNum) || qtyNum <= 0) {
-      newErrors.quantity = "Enter a valid quantity (> 0)";
+      newErrors.quantity = "Enter a valid quantity";
     }
 
     setErrors(newErrors);
