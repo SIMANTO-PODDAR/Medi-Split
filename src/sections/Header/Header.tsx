@@ -4,10 +4,18 @@ import { useState } from "react";
 import Link from "next/link";
 import { AiOutlineMenuFold, AiOutlineClose } from "react-icons/ai";
 
+import { FiHome, FiBookmark } from "react-icons/fi";
+
 const navLinks = [
   {
     name: "Home",
     href: "/",
+    icon: FiHome,
+  },
+  {
+    name: "Saved Medicines",
+    href: "/all-medicines",
+    icon: FiBookmark,
   },
 ];
 
@@ -67,16 +75,21 @@ const Header = () => {
         </div>
         
         <nav className="p-4 flex flex-col gap-2">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              onClick={closeSidebar}
-              className="px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md transition-colors font-medium"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <Link 
+                key={link.name} 
+                href={link.href}
+                onClick={closeSidebar}
+                className="group px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md transition-colors font-medium flex items-center gap-3"
+              >
+                <Icon size={20} className="text-gray-500 group-hover:text-gray-700 transition-colors" />
+                <span>{link.name}</span>
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>
