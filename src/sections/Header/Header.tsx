@@ -6,6 +6,7 @@ import { AiOutlineMenuFold, AiOutlineClose } from "react-icons/ai";
 
 import { FiHome, FiBookmark } from "react-icons/fi";
 import { IoLanguageSharp } from "react-icons/io5";
+import { IoLogoAndroid } from "react-icons/io";
 
 const navLinks = [
   {
@@ -17,6 +18,11 @@ const navLinks = [
     name: "Saved Medicines",
     href: "/all-medicines",
     icon: FiBookmark,
+  },
+  {
+    name: "Developer's Info",
+    href: "https://simanto-poddar-portfolio.vercel.app",
+    icon: IoLogoAndroid,
   },
 ];
 
@@ -70,8 +76,8 @@ const Header = () => {
       <div className="max-w-2xl mx-auto px-4 py-4 sm:py-5 flex justify-between items-center">
         <div>
           <h1 className="text-lg sm:text-xl font-bold tracking-tight">
-            <span style={{ color: "#085698" }}>MEDI</span>{" "}
-            <span style={{ color: "#339d55" }}>SPLIT</span>
+            <span className="text-[#085698]">MEDI</span>{" "}
+            <span className="text-[#339d55]">SPLIT</span>
           </h1>
           <p className="text-sm text-gray-500 mt-0.5">
             Smart Medicine Price & Discount Calculator
@@ -82,7 +88,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={openSidebar}
-            className="p-2 -mr-2 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+            className="p-2 -mr-2 text-[#339d55] hover:text-[#085698] transition-colors cursor-pointer"
             aria-label="Open menu"
           >
             <AiOutlineMenuFold size={24} />
@@ -133,7 +139,7 @@ const Header = () => {
               >
                 <Icon
                   size={20}
-                  className="text-gray-500 group-hover:text-gray-700 transition-colors"
+                  className="text-gray-500 group-hover:text-[#085698] transition-colors"
                 />
                 <span>{link.name}</span>
               </Link>
@@ -143,11 +149,13 @@ const Header = () => {
           {/* Mobile sidebar language toggle */}
           <button
             onClick={toggleLanguage}
-            className="group px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md transition-colors font-medium flex items-center gap-3 w-full text-left"
+            className="group px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md transition-colors font-medium flex items-center gap-3"
           >
-            <span className="text-gray-500 group-hover:text-gray-700 transition-colors">
-              <IoLanguageSharp />
-            </span>
+            <IoLanguageSharp
+              size={20}
+              className="text-gray-500 group-hover:text-[#085698] transition-colors"
+            />
+
             <span>
               {currentLang === "EN" ? "Switch to Bangla" : "Switch to English"}
             </span>
