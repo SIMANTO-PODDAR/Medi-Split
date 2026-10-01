@@ -8,6 +8,7 @@ import { FiHome, FiBookmark } from "react-icons/fi";
 import { IoLanguageSharp } from "react-icons/io5";
 import { IoLogoAndroid } from "react-icons/io";
 import { FaQuestion } from "react-icons/fa6";
+import { FaMapSigns } from "react-icons/fa";
 
 const navLinks = [
   {
@@ -120,8 +121,8 @@ const Header = () => {
         }`}
       >
         <div className="p-4 flex justify-between items-center border-b border-gray-100">
-          <span className="font-semibold text-gray-800 tracking-tight">
-            Navigation
+          <span className="font-semibold text-gray-800 tracking-tight flex items-center gap-2">
+           <FaMapSigns /> Navigation
           </span>
           <button
             onClick={closeSidebar}

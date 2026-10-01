@@ -65,7 +65,10 @@ function Tag({
 
 function Card({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div id={id} className="bg-white border border-gray-200 rounded-lg p-4 sm:p-6">
+    <div
+      id={id}
+      className="bg-white border border-gray-200 rounded-lg p-4 sm:p-6"
+    >
       {children}
     </div>
   );
@@ -125,7 +128,7 @@ export default function HowToUsePage() {
           />
 
           <p className="text-sm text-gray-600 mb-4">
-            Each row in the <em>Added Products</em> list has two action buttons
+            Each row in the <span className="italic">&apos;Added Products&apos;</span> list has two action buttons
             on the right.
           </p>
 
@@ -198,8 +201,10 @@ export default function HowToUsePage() {
           <ul className="space-y-2 text-sm text-gray-700">
             <li className="flex items-start gap-2">
               <span className="mt-1 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
-              Clicking it reveals an inline confirmation —{" "}
-              <Tag color="red">Yes, Clear</Tag> or <Tag color="gray">No</Tag>.
+              <p>
+                Clicking it reveals an inline confirmation -{" "}
+                <Tag color="red">Yes, Clear</Tag> or <Tag color="gray">No</Tag>.
+              </p>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
@@ -208,16 +213,21 @@ export default function HowToUsePage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
-              Your saved medicines are{" "}
-              <strong className="text-gray-900">not</strong> deleted — only the
-              current working list is cleared.
+              <p>
+                Your saved medicines are{" "}
+                <span className="text-gray-900 font-bold">not</span> deleted -
+                only the current working list is cleared.
+              </p>
             </li>
           </ul>
         </Card>
 
         {/* ── Section 5 — Saved Medicines page ── */}
         <Card id="all-medicines">
-          <SectionHeading icon={TbBookmarkQuestion} label="Saved Medicines Page" />
+          <SectionHeading
+            icon={TbBookmarkQuestion}
+            label="'Saved Medicines' Page"
+          />
 
           <p className="text-sm text-gray-600 mb-4">
             Open the menu and go to{" "}
@@ -247,7 +257,9 @@ export default function HowToUsePage() {
               </p>
             </div>
             <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-              <Tag color="red">Clear All Medicines</Tag>
+              <Tag color="red">
+                <FiTrash2 className="w-3 h-3" /> Clear&nbsp;All
+              </Tag>
               <p className="text-sm text-gray-700">
                 Removes every saved medicine at once. A{" "}
                 <strong className="text-gray-900">confirmation modal</strong>{" "}
