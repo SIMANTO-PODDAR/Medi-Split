@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getSavedProducts, updateProduct, deleteProduct, clearAllProducts } from "@/lib/storage";
 import type { SavedProduct } from "@/lib/types";
 import { FiEdit, FiTrash2, FiCheck, FiX } from "react-icons/fi";
+import Link from "next/link";
+import { GrCircleQuestion } from "react-icons/gr";
 
 export default function AllMedicinesPage() {
   const [medicines, setMedicines] = useState<SavedProduct[]>([]);
@@ -58,7 +60,17 @@ export default function AllMedicinesPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">All Medicines</h1>
+        <div className="flex items-center gap-2">
+          <h1 className="sm:text-2xl font-bold text-gray-800">All Saved Medicines</h1>
+          <Link
+            href="/how-to-use#all-medicines"
+            aria-label="How to use All Medicines"
+            title="How to use All Medicines"
+            className="inline-flex items-center justify-center w-6 h-6 rounded-full text-[#085698] hover:bg-[#085698]/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#085698]/40"
+          >
+            <GrCircleQuestion className="w-4 h-4" aria-hidden="true" />
+          </Link>
+        </div>
         {medicines.length > 0 && (
           <button 
             onClick={() => setIsClearModalOpen(true)}
@@ -73,7 +85,7 @@ export default function AllMedicinesPage() {
       
       {medicines.length === 0 ? (
         <div className="bg-white rounded-xl shadow-sm p-12 text-center border border-gray-100">
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No medicines saved yet.</h3>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">No medicines list saved yet.</h3>
           <p className="text-gray-500">Medicines added from the calculator will appear here.</p>
         </div>
       ) : (
@@ -160,7 +172,7 @@ export default function AllMedicinesPage() {
       {isClearModalOpen && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-sm animate-in fade-in zoom-in-95 duration-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Clear all medicines?</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Clear all saved medicines?</h3>
             <p className="text-gray-600 mb-6">
               Are you sure you want to remove all saved medicines? This action cannot be undone.
             </p>

@@ -5,6 +5,8 @@ import { FiPlus, FiX } from "react-icons/fi";
 import type { Product, SavedProduct } from "@/lib/types";
 import { calcProductTotal } from "@/lib/calculations";
 import { findMatchingProducts, saveProduct } from "@/lib/storage";
+import Link from "next/link";
+import { GrCircleQuestion } from "react-icons/gr";
 
 interface ProductFormProps {
   onAdd: (product: Product) => void;
@@ -158,9 +160,19 @@ export default function ProductForm({
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4 sm:p-6">
-      <h2 className="text-base font-semibold text-gray-900 mb-4">
-        {editingProduct ? "Edit Product" : "Add Product"}
-      </h2>
+      <div className="flex items-center gap-2 mb-4">
+        <h1 className="text-md sm:text-2xl font-semibold text-gray-900 leading-tight">
+          {editingProduct ? "Edit Product" : "Add Product"}
+        </h1>
+        <Link
+          href="/how-to-use#medi-split"
+          aria-label="How to use Medi-Split"
+          title="How to use Medi-Split"
+          className="inline-flex items-center justify-center w-6 h-6 rounded-full text-[#085698] hover:bg-[#085698]/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#085698]/40"
+        >
+          <GrCircleQuestion className="w-4 h-4" aria-hidden="true" />
+        </Link>
+      </div>
 
       <div className="space-y-4">
         {/* Product Name */}
@@ -235,7 +247,11 @@ export default function ProductForm({
               step="any"
               className={`w-full px-3 py-2.5 border rounded-lg text-sm text-gray-900 placeholder-gray-400
                 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent
-                ${errors.unitPrice ? "border-red-400 bg-red-50" : "border-gray-300"}`}
+                ${
+                  errors.unitPrice
+                    ? "border-red-400 bg-red-50"
+                    : "border-gray-300"
+                }`}
               aria-label="Unit price"
             />
             {errors.unitPrice && (
@@ -265,7 +281,11 @@ export default function ProductForm({
               step="1"
               className={`w-full px-3 py-2.5 border rounded-lg text-sm text-gray-900 placeholder-gray-400
                 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent
-                ${errors.quantity ? "border-red-400 bg-red-50" : "border-gray-300"}`}
+                ${
+                  errors.quantity
+                    ? "border-red-400 bg-red-50"
+                    : "border-gray-300"
+                }`}
               aria-label="Quantity"
             />
             {errors.quantity && (

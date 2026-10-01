@@ -7,6 +7,7 @@ import { AiOutlineMenuFold, AiOutlineClose } from "react-icons/ai";
 import { FiHome, FiBookmark } from "react-icons/fi";
 import { IoLanguageSharp } from "react-icons/io5";
 import { IoLogoAndroid } from "react-icons/io";
+import { FaQuestion } from "react-icons/fa6";
 
 const navLinks = [
   {
@@ -18,6 +19,11 @@ const navLinks = [
     name: "Saved Medicines",
     href: "/all-medicines",
     icon: FiBookmark,
+  },
+  {
+    name: "How To Use",
+    href: "/how-to-use",
+    icon: FaQuestion,
   },
   {
     name: "Developer's Info",
