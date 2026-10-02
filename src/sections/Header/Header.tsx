@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AiOutlineMenuFold, AiOutlineClose } from "react-icons/ai";
 
 import { FiHome, FiBookmark } from "react-icons/fi";
-import { IoLanguageSharp } from "react-icons/io5";
+import { IoLanguageSharp, IoNewspaperOutline } from "react-icons/io5";
 import { IoLogoAndroid } from "react-icons/io";
 import { FaQuestion } from "react-icons/fa6";
 import { FaMapSigns } from "react-icons/fa";
@@ -25,6 +25,11 @@ const navLinks = [
     name: "How To Use",
     href: "/how-to-use",
     icon: FaQuestion,
+  },
+  {
+    name: "Terms",
+    href: "/terms-and-conditions",
+    icon: IoNewspaperOutline,
   },
   {
     name: "Developer's Info",

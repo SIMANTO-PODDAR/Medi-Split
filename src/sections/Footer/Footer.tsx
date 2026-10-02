@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-2xl mx-auto px-4 py-3 text-center space-y-0.5">
         <p className="text-xs text-gray-400">
           MediSplit — Smart Medicine Price & Discount Calculator by Reflect
-          Pharma
+          Pharma. All rights reserved.
         </p>
         <p className="text-xs text-gray-400">
           Developed by{" "}
