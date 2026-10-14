@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/sections/Header/Header";
 import Footer from "@/sections/Footer/Footer";
 import GoogleTranslate from "@/components/GoogleTranslate/GoogleTranslate";
+import VisitorTracker from "@/components/VisitorTracker/VisitorTracker";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <VisitorTracker />
         <GoogleTranslate />
         <Header />
 
