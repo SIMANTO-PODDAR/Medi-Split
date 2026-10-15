@@ -124,6 +124,9 @@ export default function TermsAndConditionsPage() {
               <li>Attempt to disrupt or damage the service.</li>
               <li>Attempt to interfere with the normal operation of the website.</li>
             </ul>
+            <p className="text-gray-700 text-sm leading-relaxed mt-2">
+              Medi-Split uses basic visitor tracking to manage and maintain the application, improve user experience, and detect or protect against unusual activity and potential security threats. Visitor tracking information is not sold or shared with third parties.
+            </p>
           </section>
 
           <section className="space-y-2">
