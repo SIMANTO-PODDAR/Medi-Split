@@ -90,7 +90,7 @@ export async function POST(request: Request) {
     const city = rawCity ? decodeURIComponent(rawCity) : null;
 
     const db = getAdminDb();
-    const docRef = db.collection("visitors").doc(docId);
+    const docRef = db.collection("medi-split-visitors").doc(docId);
 
     await db.runTransaction(async (transaction) => {
       const docSnap = await transaction.get(docRef);

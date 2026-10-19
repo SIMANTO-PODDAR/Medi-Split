@@ -36,11 +36,11 @@ export default function VisitorTracker() {
         navigator.sendBeacon
       ) {
         const blob = new Blob([payload], { type: "application/json" });
-        const sent = navigator.sendBeacon("/api/track", blob);
+        const sent = navigator.sendBeacon("/api/visitor", blob);
         if (sent) return;
       }
 
-      fetch("/api/track", {
+      fetch("/api/visitor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: payload,
